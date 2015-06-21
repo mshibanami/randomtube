@@ -1,0 +1,13 @@
+baseurl = "/randomtube"
+title = "RandomTube"
+
+ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
+
+[params]
+Author = "mshibanami"
+
+DefaultLanguage = "en"
+Languages = ["en","ja"]
+
+iOSAppID = "id923695245"
+SupportTwitterID = "random_tube"

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap-sass": "3.3.x",
+    "jquery": "2.1.x"
+  },
+  "scripts": {
+    "postinstall": "ln -nfs ../node_modules static/node_modules"
+  }
+}

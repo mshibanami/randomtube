@@ -1,0 +1,19 @@
+box: phusion/passenger-full
+build:
+  steps:
+    - npm-install
+    - npm-test
+    - script:
+        name: compass
+        code: |
+          gem install compass
+          compass compile -e production --force
+    - arjen/hugo-build:
+      version: "0.14"
+
+deploy:
+  steps:
+    - lukevivier/gh-pages:
+      token: $GITHUB_TOKEN
+      repo: mshibanami/randomtube
+      basedir: public

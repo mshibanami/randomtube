@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+@import "compass";
+@import "compass/reset";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+$text-color: #494949;
+$randomtube-color: #eb6227;
+
+p,
+span {
+    color: $text-color;
+}
+
+h2,
+h3 {
+    color: $randomtube-color;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+p,
+span {
+    font-size: 14px;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+#logo-ruby {
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 6px;
+}
+
+#section-top {
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    h2 {
+        font-size: 23px;
+    }
+    p,
+    span {
+        font-size: 18px;
+    }
+    #logo-ruby {
+        font-size: 16px;
+    }
+    #section-top {
+        padding-top: 50px;
+    }
+}
+
+$section-gray-bg-color: #f4f4f4;
+$section-border-color: #dfdfdf;
+
+.section {
+    border-bottom: 1px $section-border-color solid;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.section:nth-child(even) {
+    background-color: $section-gray-bg-color;
+}
+
+.feature-img {
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+.line-btn a > img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+// フッター
+// -------------------------------------------------
+$footer-bg-color: #384452;
+$footer-text-color: #bfc9d3;
+
+#footer {
+    background: $footer-bg-color;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    p,
+    span,
+    a {
+        color: $footer-text-color;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+// YouTube埋め込みプレイヤー
+// -------------------------------------------------
+.embed-container {
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    iframe,
+    object,
+    embed {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url={{ .Site.Params.DefaultLanguage }}/" />
+  </noscript>
+  <script>
+    var lang = (window.navigator.userLanguage || window.navigator.language)
+        .replace(/[_-].*/, '') // 国別の国際化は非対応
+        .toLowerCase();
+
+    if({{ .Site.Params.Languages }}.indexOf(lang) >= 0){
+      location.href = lang + '/';
+    }
+    else {
+      location.href = '{{ .Site.Params.DefaultLanguage }}' + '/';
+    }
+  </script>
+</body>
+</html>
