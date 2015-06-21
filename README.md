@@ -1,4 +1,4 @@
 # RandomTube
 This is a support site for RandomTube.
 
-[![wercker status](https://app.wercker.com/status/bf5de80edb7cfea3805e13195db33e42/m "wercker status")](https://app.wercker.com/project/bykey/bf5de80edb7cfea3805e13195db33e42)
+[![wercker status](https://app.wercker.com/status/322bde403494404dd5551695c4116237/s "wercker status")](https://app.wercker.com/project/bykey/322bde403494404dd5551695c4116237)
