@@ -10,7 +10,11 @@ build:
           compass compile -e production --force
     - arjen/hugo-build:
       version: "0.14"
-
+    - script:
+        name: purify-css
+        code: |
+          css='public/css/compiled/style.css'
+          ./node_modules/purify-css/bin/purifycss $css public/[a-z][a-z]/index.html --min --out $css
 deploy:
   steps:
     - lukevivier/gh-pages:
