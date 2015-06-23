@@ -7,6 +7,6 @@ node_modules/
 /static/css/compiled/
 
 # Wercker CLI
-_builds/
-_projects/
-_steps/
+/_builds/
+/_projects/
+/_steps/
