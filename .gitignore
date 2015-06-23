@@ -1,12 +1,12 @@
-/public/
-bower_components/
-node_modules/
+/public
+bower_components
+node_modules
 
 # Compass
-.sass-cache/
-/static/css/compiled/
+.sass-cache
+/static/css/compiled
 
 # Wercker CLI
-/_builds/
-/_projects/
-/_steps/
+/_builds
+/_projects
+/_steps
