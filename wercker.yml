@@ -1,20 +1,20 @@
 box: phusion/passenger-full
 build:
   steps:
-    - npm-install
-    - npm-test
     - script:
-        name: compass
-        code: |
-          gem install compass
-          compass compile -e production --force
+      name: ビルド準備
+      code: ./build.bash
+
     - arjen/hugo-build:
-      version: "0.14"
+      name: ビルド
+      version: 0.14
+
     - script:
-        name: purify-css
+        name: CSSやHTMLの圧縮
         code: |
-          css='public/css/compiled/style.css'
-          ./node_modules/purify-css/bin/purifycss $css public/[a-z][a-z]/index.html --min --out $css
+          ./compress.bash
+
+
 deploy:
   steps:
     - lukevivier/gh-pages:
