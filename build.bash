@@ -4,8 +4,8 @@ set -ex
 
 npm install
 
-bundle install
-bundle exec compass compile -e production --force
+gem install compass
+compass compile -e production --force
 
 if type hugo &>/dev/null; then
   hugo
