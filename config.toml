@@ -3,11 +3,15 @@ title = "RandomTube"
 
 ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
 
+
 [params]
-Author = "mshibanami"
+  Author = "mshibanami"
 
-DefaultLanguage = "en"
-Languages = ["en","ja"]
+  iOSAppID = "id923695245"
+  SupportTwitterID = "random_tube"
 
-iOSAppID = "id923695245"
-SupportTwitterID = "random_tube"
+  DefaultLanguage = "en"
+
+  [params.Languages]
+    en = "English"
+    ja = "日本語"

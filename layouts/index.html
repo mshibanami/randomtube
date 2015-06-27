@@ -9,7 +9,8 @@
         .replace(/[_-].*/, '') // 国別の国際化は非対応
         .toLowerCase();
 
-    if({{ .Site.Params.Languages }}.indexOf(lang) >= 0){
+    if({{ .Site.Params.Languages }}[lang] != undefined){
+      alert(lang)
       location.href = lang + '/';
     }
     else {

@@ -31,14 +31,15 @@ p {
     margin-bottom: 25px;
 }
 
-#logo-ruby {
-    color: #666;
-    font-size: 13px;
-    letter-spacing: 6px;
+a {
+  text-decoration: underline;
 }
 
-#section-top {
-    margin-top: 20px;
+$ruby-color: #666;
+#logo-ruby {
+  color: $ruby-color;
+    font-size: 13px;
+    letter-spacing: 6px;
 }
 
 @media (min-width: 768px) {
@@ -81,6 +82,12 @@ $section-border-color: #dfdfdf;
     max-width: 100%;
 }
 
+// ヘッダー
+// -------------------------------------------------
+#header {
+    padding-top: 20px;
+}
+
 // フッター
 // -------------------------------------------------
 $footer-bg-color: #384452;
@@ -94,9 +101,6 @@ $footer-text-color: #bfc9d3;
     span,
     a {
         color: $footer-text-color;
-    }
-    a {
-        text-decoration: underline;
     }
 }
 

@@ -33,121 +33,123 @@
 </head>
 <body>
 
-<div id="section-top" class="section">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1">
-        <h2>{{ .Params.catch_copy}}</h2>
-        <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}" />
-        <div>
-          <span id="logo-ruby">{{ .Params.logo_ruby }}</span>
+{{ partial "header.html" .}}
+<div id="main">
+  <div id="section-top" class="section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1">
+          <h2>{{ .Params.catch_copy}}</h2>
+          <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}" />
+          <div>
+            <span id="logo-ruby">{{ .Params.logo_ruby }}</span>
+          </div>
+
+          <div class="row text-center">
+            <div class="col-xs-offset-3 col-xs-6">
+              <img src="img/logo-mark.png" class="img-responsive center-block" width="128px"/>
+            </div>
+          </div>
+
+          <p>
+            {{ .Description }}
+          </p>
+          <p>
+          {{ partial "appstore.html" . }}
+          </p>
         </div>
 
-        <div class="row text-center">
-          <div class="col-xs-offset-3 col-xs-6">
-            <img src="img/logo-mark.png" class="img-responsive center-block" width="128px"/>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          <img src="img/{{ .Params.lang }}/top.png" class="img-responsive" style="display:inline-block;" width="200px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
+          <h3>{{ .Params.various_filter }}</h3>
+          <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block"/>
+
+          <p>
+            {{ .Params.various_filter_description }}
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <h3>{{.Params.ignore_list }}</h3>
+          <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block"/>
+
+          <p>
+            {{ .Params.ignore_list_description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          {{ partial "appstore.html" . }}
+        </div>
+
+        <div id="boxArea" class="center-block" style="display:table;padding:20px 0 0 0;">
+          <div style="width:75px;height:64px;float:left;">
+            <div id="fb-root"></div>
+            <div class="fb-like" data-href="{{ .URL }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+          </div>
+
+          <div style="width:76px;height:64px;float:left;">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="random_tube" data-lang="{{ .Params.lang }}" data-count="vertical">
+            </a>
+          </div>
+
+          <div style="width:56px;height:64px;float:left;">
+            <div class="g-plusone" data-size="tall"></div>
+          </div>
+
+          <div style="width:85px;height:62px;float:left;">
+            <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
+              <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
+            </a>
+          </div>
+
+          <div style="width:44px;height:62px;float:left;">
+            <span>
+              <script src="//media.line.me/js/line-button.js?v=20140411"></script>
+              <script>new media_line_me.LineButton({pc: true, lang: '{{ .Params.lang }}', type: 'e'});</script>
+            </span>
           </div>
         </div>
-
-        <p>
-          {{ .Description }}
-        </p>
-        <p>
-        {{ partial "appstore.html" . }}
-        </p>
       </div>
+    </div>
+  </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <img src="img/{{ .Params.lang }}/top.png" class="img-responsive" style="display:inline-block;" width="200px">
+  <div class="section">
+    <div class="container">
+      <div class="row text-center">
+        <span>
+          {{ $mail := "http://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
+          {{ $twitter := (add "https://twitter.com/" .Site.Params.SupportTwitterID) }}
+          {{ $github := "https://github.com/mshibanami/randomtube/issues"}}
+          {{ safeHTML (printf .Params.advice_me $mail $twitter $github) }}
+        </span>
       </div>
     </div>
   </div>
 </div>
-
-<div class="section">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
-        <h3>{{ .Params.various_filter }}</h3>
-        <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block"/>
-
-        <p>
-          {{ .Params.various_filter_description }}
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-        <h3>{{.Params.ignore_list }}</h3>
-        <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block"/>
-
-        <p>
-          {{ .Params.ignore_list_description }}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-md-12">
-        {{ partial "appstore.html" . }}
-      </div>
-
-      <div id="boxArea" class="center-block" style="display:table;padding:20px 0 0 0;">
-        <div style="width:75px;height:64px;float:left;">
-          <div id="fb-root"></div>
-          <div class="fb-like" data-href="{{ .URL }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-        </div>
-
-        <div style="width:76px;height:64px;float:left;">
-          <a href="https://twitter.com/share" class="twitter-share-button" data-via="random_tube" data-lang="{{ .Params.lang }}" data-count="vertical">
-          </a>
-        </div>
-
-        <div style="width:56px;height:64px;float:left;">
-          <div class="g-plusone" data-size="tall"></div>
-        </div>
-
-        <div style="width:85px;height:62px;float:left;">
-          <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
-            <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
-          </a>
-        </div>
-
-        <div style="width:44px;height:62px;float:left;">
-          <span>
-            <script src="//media.line.me/js/line-button.js?v=20140411"></script>
-            <script>new media_line_me.LineButton({pc: true, lang: '{{ .Params.lang }}', type: 'e'});</script>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="row text-center">
-      <span>
-        {{ $mail := "http://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
-        {{ $twitter := (add "https://twitter.com/" .Site.Params.SupportTwitterID) }}
-        {{ $github := "https://github.com/mshibanami/randomtube/issues"}}
-        {{ safeHTML (printf .Params.advice_me $mail $twitter $github) }}
-      </span>
-    </div>
-  </div>
-</div>
-
 
 {{ partial "footer.html" .}}
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-{{ partial "facebook.html" .}}
+<!-- {{ partial "facebook.html" .}}
 {{ partial "twitter.html" .}}
 {{ partial "hatenaBookmark.html" .}}
 {{ partial "googlePlus.html" . }}
-{{ partial "googleAnalytics.html" . }}
+{{ partial "googleAnalytics.html" . }} -->
 </body>
 </html>
