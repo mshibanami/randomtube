@@ -7,11 +7,12 @@ build:
       code: ./build.bash
 
     - arjen/hugo-build:
+      name: ビルド
       version: "0.14"
 
     - script:
-        name: CSSやHTMLの圧縮
-        code: ./compress.bash
+      name: CSSやHTMLの圧縮
+      code: ./compress.bash
 
 
 deploy:
