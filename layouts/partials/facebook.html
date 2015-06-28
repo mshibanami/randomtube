@@ -8,5 +8,5 @@
     js.id = id;
     js.src = "//connect.facebook.net/" + locale + "/sdk.js#xfbml=1&version=v2.3";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk', '{{ .Params.lang }}_{{ .Params.country }}'));
+  }(document, 'script', 'facebook-jssdk', '{{ .Params.lang }}_{{ index .Site.Params.Countries .Params.lang }}'));
 </script>

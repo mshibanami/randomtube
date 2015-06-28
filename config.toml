@@ -12,6 +12,12 @@ ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
 
   DefaultLanguage = "en"
 
+  # サポートする言語
   [params.Languages]
     en = "English"
     ja = "日本語"
+
+  # 言語に対応する国コード (Open Graph 等用)
+  [params.Countries]
+    en = "US"
+    ja = "JP"

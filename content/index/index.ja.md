@@ -4,7 +4,6 @@ Description  = 'YouTubeにある面白い動画をたくさん探してくれる
 Keywords = ['YouTube','アプリ','iPhone','iPad','iOS','動画','ランダム']
 
 lang = 'ja'
-country = 'JP'
 
 catch_copy  = 'ダラダラみよう'
 logo_ruby  = 'ランダムチューブ'

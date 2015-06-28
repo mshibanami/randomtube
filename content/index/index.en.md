@@ -4,7 +4,6 @@ Description  = 'RandomTube is iOS App that searches for many cool videos on YouT
 Keywords = ['YouTube','App','iPhone','iPad','iOS','Video','Random']
 
 lang = 'en'
-country = 'US'
 
 catch_copy  = 'Watch Videos Easy'
 logo_ruby  = ''
