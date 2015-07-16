@@ -1,5 +1,5 @@
 <script>
 var bhatenas = document.getElementsByClassName('hatena-bookmark-button');
-for (i = 0; i < bhatenas.length; i++) { bhatenas[i].setAttribute('data-hatena-bookmark-lang', lang); }
+for (i = 0; i < bhatenas.length; i++) { bhatenas[i].setAttribute('data-hatena-bookmark-lang', "{{ .Params.lang }}"); }
 </script>
 <script src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async></script>
