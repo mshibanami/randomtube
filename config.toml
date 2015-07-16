@@ -1,4 +1,4 @@
-baseurl = "http://mshibanami.github.io/randomtube"
+baseurl = "https://mshibanami.github.io/randomtube"
 title = "RandomTube"
 
 ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]

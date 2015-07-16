@@ -113,7 +113,7 @@
             </div>
             <div class="share-button">
               <a href="http://b.hatena.ne.jp/entry/{{ .Permalink }}" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
-                <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
+                <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
               </a>
             </div>
 
@@ -132,7 +132,7 @@
       <div class="container">
         <div class="row text-center">
           <span>
-            {{ $mail := "http://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
+            {{ $mail := "https://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
             {{ $twitter := (add "https://twitter.com/" .Site.Params.SupportTwitterID) }}
             {{ $github := "https://github.com/mshibanami/randomtube/issues"}}
             {{ safeHTML (printf .Params.advice_me $mail $twitter $github) }}
