@@ -97,27 +97,28 @@
             {{ partial "appstore.html" . }}
           </div>
 
-          <div class="center-block" style="display:table;">
-            <div class="share-button">
+          <div class="center-block share-buttons">
+            <div>
               <div id="fb-root"></div>
               <div class="fb-like" data-href="{{ .Permalink }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
             </div>
 
-            <div class="share-button">
+            <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="random_tube" data-lang="{{ .Params.lang }}" data-count="vertical">
               </a>
             </div>
 
-            <div class="share-button">
+            <div>
               <div class="g-plusone" data-size="tall"></div>
             </div>
-            <div class="share-button">
+
+            <div>
               <a href="http://b.hatena.ne.jp/entry/{{ .Permalink }}" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
                 <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
               </a>
             </div>
 
-            <div class="share-button">
+            <div>
               <span>
                 <script src="//media.line.me/js/line-button.js?v=20140411"></script>
                 <script>new media_line_me.LineButton({pc: true, lang: '{{ .Params.lang }}', type: 'e'});</script>

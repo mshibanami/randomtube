@@ -105,9 +105,13 @@ $footer-text-color: #bfc9d3;
 
 // SNSの共有ボタン
 // -------------------------------------------------
-.share-button {
-  padding: 5px;
-  float: left;
+.share-buttons {
+  display:table;
+
+  > div {
+    padding: 5px;
+    float: left;
+  }
 }
 
 // YouTube埋め込みプレイヤー
