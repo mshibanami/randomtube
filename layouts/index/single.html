@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="{{ .Params.lang }}">
 <head>
-  <base href="../" />
+  <base href="../">
+  <base target="_blank">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ .Site.Params.Author }}">
   <meta name="description" content="{{ .Description }}">
-  <meta name="keywords" content="{{delimit .Keywords ","}}"/>
+  <meta name="keywords" content="{{delimit .Keywords ","}}">
 
-  <meta name="twitter:card" content="app"/>
-  <meta name="twitter:site" content="@{{ .Site.Params.SupportTwitterID }}"/>
+  <meta name="twitter:card" content="app">
+  <meta name="twitter:site" content="@{{ .Site.Params.SupportTwitterID }}">
   <meta name="twitter:app:id:iphone" content="{{ .Site.Params.iOSAppID }}">
   <meta name="twitter:app:id:ipad" content="{{ .Site.Params.iOSAppID }}">
 
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="{{ .Site.Title }}"/>
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/apple-touch-icon.png"/>
-  <meta property="og:description" content="{{ .Description }}"/>
-  <meta property="og:url" content="{{ .Permalink }}"/>
-  <meta property="og:locale" content="{{ .Params.lang }}_{{ index .Site.Params.Countries .Params.lang }}"/>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ .Site.Title }}">
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:locale" content="{{ .Params.lang }}_{{ index .Site.Params.Countries .Params.lang }}">
 
   <title>{{ .Site.Title }}</title>
 
-  <base target="_blank">
-
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/compiled/style.css">
 </head>
@@ -42,13 +41,13 @@
         <div class="row text-center">
           <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1">
             <h2>{{ .Params.catch_copy}}</h2>
-            <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}" />
+            <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}">
             <div>
               <span id="logo-ruby">{{ .Params.logo_ruby }}</span>
             </div>
             <div class="row text-center">
               <div class="col-xs-offset-3 col-xs-6">
-                <img src="img/logo-mark.png" class="img-responsive center-block" width="128px"/>
+                <img src="img/logo-mark.png" class="img-responsive center-block" width="128px">
               </div>
             </div>
 
@@ -72,7 +71,7 @@
         <div class="row text-center">
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
             <h3>{{ .Params.various_filter }}</h3>
-            <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block"/>
+            <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block">
 
             <p>
               {{ .Params.various_filter_description }}
@@ -80,7 +79,7 @@
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <h3>{{.Params.ignore_list }}</h3>
-            <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block"/>
+            <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block">
 
             <p>
               {{ .Params.ignore_list_description }}
@@ -114,7 +113,7 @@
 
             <div>
               <a href="http://b.hatena.ne.jp/entry/{{ .Permalink }}" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
-                <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;"/>
+                <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;">
               </a>
             </div>
 
