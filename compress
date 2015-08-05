@@ -70,7 +70,8 @@ def getSettings
   settings << Setting.new(
     "\\.js$",
 
-    ["bower_components", "node_modules", "test",],
+    # Don't include bower_components, because Modernizr doesn't have "modernizr.min.js".
+    ["node_modules", "modernizr/feature-detects", "test",],
 
     Proc.new{ |file|
       cmd = sprintf("%s -o %s %s", UGLIFY_JS, file.path, file.path)
