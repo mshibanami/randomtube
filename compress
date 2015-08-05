@@ -1,37 +1,87 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-set -e
+require "find"
 
-# CSSファイルの圧縮
-# ----------------------------
-# TODO: 冗長
-styleCss='public/css/compiled/style.css'
-size=$(( $(wc -c < $styleCss) / 1024))
+FILES_ROOT = "public/"
+HTML_MINIFIER = "static/node_modules/.bin/html-minifier"
+PURIFY_CSS = "static/node_modules/.bin/purifycss"
 
-./node_modules/purify-css/bin/purifycss $styleCss public/index.html public/[a-z][a-z]/index.html --min --out $styleCss
+Setting = Struct.new(:target, :ignoreDirs, :proc)
 
-purifiedSize=$(($(wc -c < $styleCss) / 1024))
-echo "$size"kB→"$purifiedSize"kB $styleCss
+def getFilePaths(root, target, ignoreDirs)
+  paths = []
+
+  Find.find(root) do |f|
+    Find.prune if f =~ Regexp.new(ignoreDirs.join("|"))
+    if f =~ Regexp.new(target)
+      paths << f
+    end
+  end
+
+  paths
+end
 
 
-# HTMLファイルの圧縮
-# ----------------------------
-ignoreDirs=(
-  .*node_modules
-  .*bower_components
-)
-# 対象のHTMLパスを取得
-for d in ${ignoreDirs[@]}; do
-  ignoreDirsParam=" -not ( -type d -regex $d -prune ) $ignoreDirsParam "
-done
-htmls=$(find public $ignoreDirsParam -regex '.*\.html$')
+def compress(filePaths)
+  for fp in filePaths
+    f = File.new(fp)
+    size = f.size / 1024.0
 
-# 圧縮
-for f in $htmls; do
-  size=$(($(wc -c < $f) / 1024))
+    yield f
 
-  ./node_modules/html-minifier/cli.js -c html-minifier.conf -o $f $f
+    compressedSize = f.size / 1024.0
+    printf("%8.1fkB→%8.1fkB %s\n", size, compressedSize, f.path)
+  end
+end
 
-  purifiedSize=$(($(wc -c < $f) / 1024))
-  echo "$size"kB→"$purifiedSize"kB $f
-done
+
+# purifyCss() is voodoo magic. Please be careful if you use this.
+def purifyCss(cssFiles)
+  cssFiles.each do |css, htmls|
+    c = File.new(css)
+    size = c.size / 1024.0
+
+    cmd = sprintf("%s %s %s --min --out %s", PURIFY_CSS, css, htmls.join(" "), css)
+    system(cmd)
+
+    compressedSize = c.size / 1024.0
+    printf("%8.1fkB→%8.1fkB %s\n", size, compressedSize, c.path)
+  end
+end
+
+
+def getSettings
+  settings = []
+
+  # Compression Settings for HTML files
+  settings << Setting.new(
+    "\\.html$",
+
+    ["bower_components", "node_modules", "test",],
+
+    Proc.new{ |file|
+      cmd = sprintf("%s -c html-minifier.conf -o %s %s", HTML_MINIFIER, file.path, file.path)
+      system(cmd)
+    }
+  )
+end
+
+
+for s in getSettings()
+  puts sprintf("📦  Now Compressing %s files ...", s.target)
+
+  filePaths = getFilePaths(FILES_ROOT, s.target, s.ignoreDirs)
+  compress(filePaths, &s.proc)
+end
+
+puts sprintf("📦  Now Compressing CSS files ...")
+
+cssFiles = {
+  "public/css/compiled/style.css" => [
+    "public/index.html",
+    "public/[a-z][a-z]/index.html"
+  ]
+}
+purifyCss(cssFiles)
+
+puts sprintf("🍺  All Compression Finished!")
