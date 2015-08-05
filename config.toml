@@ -6,6 +6,9 @@ ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
 
 [params]
   Author = "mshibanami"
+  CopyrightYear = "2015"
+
+  TwitterID = "mshibanami"
   GoogleAnalyticsID = "UA-46019833-3"
 
   iOSAppID = "id923695245"
