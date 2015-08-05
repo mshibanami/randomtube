@@ -1,0 +1,7 @@
+{
+  "name": "RandomTube",
+
+  "dependencies": {
+    "modernizr": "2.8.x"
+  }
+}

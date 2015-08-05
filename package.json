@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap-sass": "3.3.x",
+    "bower": "1.4.x",
     "jquery": "2.1.x",
     "purify-css": "1.x.x",
     "html-minifier": "0.x.x",

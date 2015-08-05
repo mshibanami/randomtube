@@ -4,6 +4,8 @@ set -ex
 
 npm install
 
+static/node_modules/.bin/bower install
+
 bundle install
 bundle exec compass compile -e production --force
 

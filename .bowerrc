@@ -1,0 +1,4 @@
+{
+  "allow-root": true,
+  "directory": "static/bower_components"
+}
