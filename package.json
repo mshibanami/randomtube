@@ -3,7 +3,8 @@
     "bootstrap-sass": "3.3.x",
     "jquery": "2.1.x",
     "purify-css": "1.x.x",
-    "html-minifier": "0.x.x"
+    "html-minifier": "0.x.x",
+    "uglify-js": "2.x.x"
   },
   "scripts": {
     "preinstall": "rm -rf static/node_modules",

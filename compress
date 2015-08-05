@@ -4,6 +4,7 @@ require "find"
 
 FILES_ROOT = "public/"
 HTML_MINIFIER = "static/node_modules/.bin/html-minifier"
+UGLIFY_JS = "static/node_modules/.bin/uglifyjs"
 PURIFY_CSS = "static/node_modules/.bin/purifycss"
 
 Setting = Struct.new(:target, :ignoreDirs, :proc)
@@ -64,6 +65,19 @@ def getSettings
       system(cmd)
     }
   )
+
+  # Compression Settings for JavaScript files
+  settings << Setting.new(
+    "\\.js$",
+
+    ["bower_components", "node_modules", "test",],
+
+    Proc.new{ |file|
+      cmd = sprintf("%s -o %s %s", UGLIFY_JS, file.path, file.path)
+      system(cmd)
+    }
+  )
+  settings
 end
 
 
