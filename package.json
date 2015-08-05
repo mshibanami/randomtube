@@ -6,6 +6,7 @@
     "html-minifier": "0.x.x"
   },
   "scripts": {
-    "postinstall": "ln -nfs ../node_modules static/node_modules"
+    "preinstall": "rm -rf static/node_modules",
+    "postinstall": "mv node_modules static/"
   }
 }
