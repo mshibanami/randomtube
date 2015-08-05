@@ -4,7 +4,7 @@ build:
   steps:
     - script:
       name: ビルド準備
-      code: ./build.bash
+      code: ./build
 
     - arjen/hugo-build:
       name: ビルド
@@ -12,7 +12,7 @@ build:
 
     - script:
       name: CSSやHTMLの圧縮
-      code: ./compress.bash
+      code: ./compress
 
 
 deploy:
