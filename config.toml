@@ -11,14 +11,14 @@ ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
   iOSAppID = "id923695245"
   SupportTwitterID = "random_tube"
 
-  DefaultLanguage = "en"
+  # First element is default language.
+  SupportLanguages = ["en", "ja"]
 
-  # サポートする言語
   [params.Languages]
     en = "English"
     ja = "日本語"
 
-  # 言語に対応する国コード (Open Graph 等用)
+  # For Open Graph etc.
   [params.Countries]
     en = "US"
     ja = "JP"
