@@ -1,158 +1,158 @@
 <!DOCTYPE html>
 <html lang="{{ .Params.lang }}">
-<head>
-  <base href="../">
-  <base target="_blank">
+  <head>
+    <base href="../">
+    <base target="_blank">
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="{{ .Site.Params.Author }}">
-  <meta name="description" content="{{ .Description }}">
-  <meta name="keywords" content="{{delimit .Keywords ","}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ .Site.Params.Author }}">
+    <meta name="description" content="{{ .Description }}">
+    <meta name="keywords" content="{{delimit .Keywords ","}}">
 
-  <meta name="twitter:card" content="app">
-  <meta name="twitter:site" content="@{{ .Site.Params.SupportTwitterID }}">
-  <meta name="twitter:app:id:iphone" content="{{ .Site.Params.iOSAppID }}">
-  <meta name="twitter:app:id:ipad" content="{{ .Site.Params.iOSAppID }}">
+    <meta name="twitter:card" content="app">
+    <meta name="twitter:site" content="@{{ .Site.Params.SupportTwitterID }}">
+    <meta name="twitter:app:id:iphone" content="{{ .Site.Params.iOSAppID }}">
+    <meta name="twitter:app:id:ipad" content="{{ .Site.Params.iOSAppID }}">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ .Site.Title }}">
-  <meta property="og:image" content="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:locale" content="{{ .Params.lang }}_{{ index .Site.Params.Countries .Params.lang }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}/img/apple-touch-icon.png">
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:locale" content="{{ .Params.lang }}_{{ index .Site.Params.Countries .Params.lang }}">
 
-  <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}</title>
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="css/compiled/style.css">
+    <link rel="stylesheet" href="css/compiled/style.css">
 
-  <script src="bower_components/modernizr/modernizr.js"></script>
-</head>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+  </head>
 
 
-<body>
-  {{ partial "header.html" .}}
+  <body>
+    {{ partial "header.html" .}}
 
-  <div id="main">
-    <div id="section-top" class="section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1">
-            <h2>{{ .Params.catch_copy}}</h2>
-            <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}">
-            <div>
-              <span id="logo-ruby">{{ .Params.logo_ruby }}</span>
+    <div id="main">
+      <div id="section-top" class="section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1">
+              <h2>{{ .Params.catch_copy}}</h2>
+              <img src="img/title.png" class="img-responsive center-block" width="330px" alt="{{ .Site.Title }}">
+              <div>
+                <span id="logo-ruby">{{ .Params.logo_ruby }}</span>
+              </div>
+              <div class="row text-center">
+                <div class="col-xs-offset-3 col-xs-6">
+                  <img src="img/logo-mark.png" class="img-responsive center-block" width="128px">
+                </div>
+              </div>
+
+              <p>
+                {{ .Description }}
+              </p>
+              <p>
+                {{ partial "appstore.html" . }}
+              </p>
             </div>
-            <div class="row text-center">
-              <div class="col-xs-offset-3 col-xs-6">
-                <img src="img/logo-mark.png" class="img-responsive center-block" width="128px">
+
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+              <img src="img/{{ .Params.lang }}/top.png" class="img-responsive" style="display:inline-block;" width="200px">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
+              <h3>{{ .Params.various_filter }}</h3>
+              <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block">
+
+              <p>
+                {{ .Params.various_filter_description }}
+              </p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+              <h3>{{.Params.ignore_list }}</h3>
+              <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block">
+
+              <p>
+                {{ .Params.ignore_list_description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12">
+              {{ partial "appstore.html" . }}
+            </div>
+
+            <div class="center-block share-buttons">
+              <div>
+                <div id="fb-root"></div>
+                <div class="fb-like" data-href="{{ .Permalink }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+              </div>
+
+              <div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="random_tube" data-lang="{{ .Params.lang }}" data-count="vertical">
+                </a>
+              </div>
+
+              <div>
+                <div class="g-plusone" data-size="tall"></div>
+              </div>
+
+              <div>
+                <a href="http://b.hatena.ne.jp/entry/{{ .Permalink }}" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
+                  <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;">
+                </a>
+              </div>
+
+              <div>
+                <span>
+                  <script src="https://media.line.me/js/line-button.js?v=20140411"></script>
+                  <script>new media_line_me.LineButton({pc: true, lang: '{{ .Params.lang }}', type: 'e'});</script>
+                </span>
               </div>
             </div>
-
-            <p>
-              {{ .Description }}
-            </p>
-            <p>
-              {{ partial "appstore.html" . }}
-            </p>
           </div>
+        </div>
+      </div>
 
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <img src="img/{{ .Params.lang }}/top.png" class="img-responsive" style="display:inline-block;" width="200px">
+      <div class="section">
+        <div class="container">
+          <div class="row text-center">
+            <span>
+              {{ $mail := "https://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
+              {{ $twitter := (add "https://twitter.com/" .Site.Params.SupportTwitterID) }}
+              {{ $github := "https://github.com/mshibanami/randomtube/issues"}}
+              {{ safeHTML (printf .Params.advice_me $mail $twitter $github) }}
+            </span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-lg-offset-2">
-            <h3>{{ .Params.various_filter }}</h3>
-            <img src="img/{{ .Params.lang }}/filters.png" class="feature-img img-responsive img-thumbnail center-block">
+    {{ partial "footer.html" .}}
 
-            <p>
-              {{ .Params.various_filter_description }}
-            </p>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-            <h3>{{.Params.ignore_list }}</h3>
-            <img src="img/{{ .Params.lang }}/ignore-list.png" class="feature-img img-responsive img-thumbnail center-block">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
 
-            <p>
-              {{ .Params.ignore_list_description }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            {{ partial "appstore.html" . }}
-          </div>
-
-          <div class="center-block share-buttons">
-            <div>
-              <div id="fb-root"></div>
-              <div class="fb-like" data-href="{{ .Permalink }}" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-            </div>
-
-            <div>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-via="random_tube" data-lang="{{ .Params.lang }}" data-count="vertical">
-              </a>
-            </div>
-
-            <div>
-              <div class="g-plusone" data-size="tall"></div>
-            </div>
-
-            <div>
-              <a href="http://b.hatena.ne.jp/entry/{{ .Permalink }}" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="{{ .Params.lang }}">
-                <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" width="20" height="20" style="border: none;">
-              </a>
-            </div>
-
-            <div>
-              <span>
-                <script src="https://media.line.me/js/line-button.js?v=20140411"></script>
-                <script>new media_line_me.LineButton({pc: true, lang: '{{ .Params.lang }}', type: 'e'});</script>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="container">
-        <div class="row text-center">
-          <span>
-            {{ $mail := "https://www.google.com/recaptcha/mailhide/d?k=01FYaobcyr_WygMhK1l6sgWQ==&amp;c=bvrh-bNZYNtMFzUU2BlrgDVz5OeVCcqqCnZX_AS6XSA="}}
-            {{ $twitter := (add "https://twitter.com/" .Site.Params.SupportTwitterID) }}
-            {{ $github := "https://github.com/mshibanami/randomtube/issues"}}
-            {{ safeHTML (printf .Params.advice_me $mail $twitter $github) }}
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{ partial "footer.html" .}}
-
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-
-  {{ partial "facebook.html" .}}
-  {{ partial "twitter.html" .}}
-  {{ partial "hatenaBookmark.html" .}}
-  {{ partial "googlePlus.html" . }}
-  {{ partial "googleAnalytics.html" . }}
-</body>
+    {{ partial "facebook.html" .}}
+    {{ partial "twitter.html" .}}
+    {{ partial "hatenaBookmark.html" .}}
+    {{ partial "googlePlus.html" . }}
+    {{ partial "googleAnalytics.html" . }}
+  </body>
 </html>
