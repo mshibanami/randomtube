@@ -80,13 +80,13 @@ $section-border-color: #dfdfdf;
   width: 250px;
 }
 
-// ヘッダー
+// Header
 // -------------------------------------------------
 #header {
   padding-top: 20px;
 }
 
-// フッター
+// Footer
 // -------------------------------------------------
 $footer-bg-color: #384452;
 $footer-text-color: #bfc9d3;
@@ -103,7 +103,7 @@ $footer-text-color: #bfc9d3;
   }
 }
 
-// SNSの共有ボタン
+// SNS Share Buttons
 // -------------------------------------------------
 .share-buttons {
   display:table;
@@ -114,7 +114,7 @@ $footer-text-color: #bfc9d3;
   }
 }
 
-// YouTube埋め込みプレイヤー
+// Responsive YouTube Player
 // -------------------------------------------------
 .embed-container {
   max-width: 100%;
