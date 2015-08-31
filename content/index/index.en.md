@@ -1,6 +1,6 @@
 +++
 URL = '/en/'
-Description  = 'RandomTube is iOS App that searches for many cool videos on YouTube.'
+Description  = 'RandomTube is an iOS app that searches many cool videos on YouTube.'
 Keywords = ['YouTube','App','iPhone','iPad','iOS','Video','Random']
 
 lang = 'en'
