@@ -5,7 +5,7 @@ Keywords = ['YouTube','アプリ','iPhone','iPad','iOS','動画','ランダム']
 
 lang = 'ja'
 
-catch_copy  = 'ダラダラみよう'
+catch_copy  = 'おもしろ動画発見'
 logo_ruby  = 'ランダムチューブ'
 appstore_badge_alt  = 'AppStoreからダウンロード'
 various_filter  = 'いろんなフィルタ'
