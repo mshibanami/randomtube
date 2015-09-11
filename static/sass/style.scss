@@ -7,6 +7,10 @@
 $text-color: #494949;
 $randomtube-color: #eb6227;
 
+html {
+  font-size: 1em;
+}
+
 p,
 span {
   color: $text-color;
@@ -19,12 +23,12 @@ h3 {
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 
 p,
 span {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 p {
@@ -39,22 +43,14 @@ $ruby-color: #666;
 
 #logo-ruby {
   color: $ruby-color;
-  font-size: 13px;
+  font-size: 0.8rem;
   letter-spacing: 6px;
 }
 
 @media (min-width: 768px) {
-  h2 {
-    font-size: 23px;
-  }
 
-  p,
-  span {
-    font-size: 18px;
-  }
-
-  #logo-ruby {
-    font-size: 16px;
+  html {
+    font-size: 1.2em;
   }
 
   #section-top {
