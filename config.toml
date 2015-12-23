@@ -12,7 +12,7 @@ ignoreFiles = ["\\.(sass|scss|less|ts|coffee)$"]
   GoogleAnalyticsID = "UA-46019833-3"
 
   iOSAppID = "id923695245"
-  SupportTwitterID = "random_tube"
+  SupportTwitterID = "mshibanami"
 
   # First element is default language.
   SupportLanguages = ["en", "ja"]
