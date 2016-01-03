@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import "compass";
+@import "compass/reset";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+$text-color: #494949;
+$randomtube-color: #eb6227;
+
+html {
+  font-size: 1em;
+}
+
+p,
+span {
+  color: $text-color;
+}
+
+h2,
+h3 {
+  color: $randomtube-color;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+p,
+span {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 25px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+$ruby-color: #666;
+
+#logo-ruby {
+  color: $ruby-color;
+  font-size: 0.8rem;
+  letter-spacing: 6px;
+}
+
+@media (min-width: 768px) {
+
+  html {
+    font-size: 1.2em;
+  }
+
+  #section-top {
+    padding-top: 50px;
+  }
+}
+
+$section-gray-bg-color: #f4f4f4;
+$section-border-color: #dfdfdf;
+
+.section {
+  border-bottom: 1px $section-border-color solid;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.section:nth-child(even) {
+  background-color: $section-gray-bg-color;
+}
+
+.feature-img {
+  margin-bottom: 10px;
+  width: 250px;
+}
+
+// Header
+// -------------------------------------------------
+#header {
+  padding-top: 20px;
+}
+
+// Footer
+// -------------------------------------------------
+$footer-bg-color: #384452;
+$footer-text-color: #bfc9d3;
+
+#footer {
+  background: $footer-bg-color;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  p,
+  span,
+  a {
+    color: $footer-text-color;
+  }
+}
+
+// SNS Share Buttons
+// -------------------------------------------------
+.share-buttons {
+  display:table;
+
+  > div {
+    padding: 5px;
+    float: left;
+  }
+}
+
+// Responsive YouTube Player
+// -------------------------------------------------
+.embed-container {
+  max-width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe,
+  object,
+  embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
